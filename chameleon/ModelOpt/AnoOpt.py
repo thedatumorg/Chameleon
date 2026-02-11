@@ -49,10 +49,9 @@ def run_ChameleonOpt_precomputed(variant, data, Candidate_Model_Set, args):
 
     try:
 
-        # 7) partial re-ranking via synthetic injection
         rng = np.random.default_rng(getattr(args, "seed", 0))
 
-        # --- TOP-K DETECTOR SAMPLING (NOT RANDOM) ---
+        # --- TOP-K DETECTOR SAMPLING ---
         # choose top-K detectors by original aggregated ranks
         # topK_default = max(1, int(round(0.20 * num_models)))
         topK_default = 5
@@ -236,10 +235,11 @@ def run_ChameleonEns_U_ID(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    scaler = StandardScaler()
-    scaler.fit(det_scores)
-    standardized_det_scores = scaler.transform(det_scores)
-    avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    # scaler = StandardScaler()
+    # scaler.fit(det_scores)
+    # standardized_det_scores = scaler.transform(det_scores)
+    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
 def run_ChameleonEns_U_OOD(variant, data, Candidate_Model_Set, args):
@@ -262,10 +262,11 @@ def run_ChameleonEns_U_OOD(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    scaler = StandardScaler()
-    scaler.fit(det_scores)
-    standardized_det_scores = scaler.transform(det_scores)
-    avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    # scaler = StandardScaler()
+    # scaler.fit(det_scores)
+    # standardized_det_scores = scaler.transform(det_scores)
+    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
 def run_ChameleonEns_M_ID(variant, data, Candidate_Model_Set, args):
@@ -288,10 +289,11 @@ def run_ChameleonEns_M_ID(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    scaler = StandardScaler()
-    scaler.fit(det_scores)
-    standardized_det_scores = scaler.transform(det_scores)
-    avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    # scaler = StandardScaler()
+    # scaler.fit(det_scores)
+    # standardized_det_scores = scaler.transform(det_scores)
+    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
 def run_ChameleonEns_M_OOD(variant, data, Candidate_Model_Set, args):
@@ -314,10 +316,11 @@ def run_ChameleonEns_M_OOD(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    scaler = StandardScaler()
-    scaler.fit(det_scores)
-    standardized_det_scores = scaler.transform(det_scores)
-    avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    # scaler = StandardScaler()
+    # scaler.fit(det_scores)
+    # standardized_det_scores = scaler.transform(det_scores)
+    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
+    avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
 def run_ChameleonOpt_U_ID(variant, data, Candidate_Model_Set, args, alpha=0.7, temp=1.0, w_clip=(0.05, 0.60)):

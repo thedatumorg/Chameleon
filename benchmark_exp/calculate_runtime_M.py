@@ -12,52 +12,48 @@ eva_filesList = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/file_lis
 Automated_solution_path = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/'
 Candidate_path = '/data/liuqinghua/code/ts/TSAD-AutoML/AutoAD_Solution/TSB-AutoAD/resource/run_time/multi/'
 data_direc = '/data/liuqinghua/code/ts/public_repo/TSB-AD/Datasets/TSB-AD-Datasets/TSB-AD-M/'
-# save_path = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/runtime/Chameleon_InferenceTime_M.csv'
-save_path = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/runtime/Chameleon_SelectionTime_M.csv'
+save_path = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/runtime/Chameleon_InferenceTime_M.csv'
+# save_path = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/runtime/Chameleon_SelectionTime_M.csv'
 
-ranking_path_ID = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/Synthetic_Opt_TopK_precomputed_M_logit_ID.csv'
-ranking_path_OOD = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/Synthetic_Opt_TopK_precomputed_M_logit_OOD.csv'
-selection_time_path_ID = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/Chameleon_Rec_ID.csv'
-selection_time_path_OOD = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/Chameleon_Rec_OOD.csv'
+ranking_path_ID = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/ChameleonOpt_precomputed_ID.csv'
+ranking_path_OOD = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/ChameleonOpt_precomputed_OOD.csv'
+selection_time_path_ID = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/ChameleonRec_ID.csv'
+selection_time_path_OOD = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/AutoAD/TSB-AD-M/ChameleonRec_OOD.csv'
 
 Candidate_Model_Set = ['IForest', 'LOF', 'PCA', 'HBOS', 'OCSVM', 'MCD', 'KNN', 'KMeansAD', 'COPOD', 'CBLOF', 'EIF', 'RobustPCA', 'AutoEncoder', 
                     'CNN', 'LSTMAD', 'TranAD', 'AnomalyTransformer', 'OmniAnomaly', 'USAD', 'Donut', 'TimesNet', 'FITS', 'OFA']
 
-Method_list = ['Chameleon_Rec_ID', 'Chameleon_Rec_OOD',   # SelectionTime + 1 DetTime
+Method_list = ['ChameleonRec_ID', 'ChameleonRec_OOD',   # SelectionTime + 1 DetTime
+                'Avg_Ens',
                 # SelectionTime + Multiple DetTime
-               'Chameleon_Opt_M_1_ID', 'Chameleon_Opt_M_2_ID', 'Chameleon_Opt_M_3_ID', 'Chameleon_Opt_M_4_ID', 'Chameleon_Opt_M_5_ID', 
-            #    'Chameleon_Opt_M_7_ID', 'Chameleon_Opt_M_9_ID', 'Chameleon_Opt_M_11_ID',
-               'Chameleon_Opt_M_1_OOD', 'Chameleon_Opt_M_2_OOD', 'Chameleon_Opt_M_3_OOD', 'Chameleon_Opt_M_4_OOD', 'Chameleon_Opt_M_5_OOD', 
-            #    'Chameleon_Opt_M_7_OOD', 'Chameleon_Opt_M_9_OOD', 'Chameleon_Opt_M_11_OOD',
+               'ChameleonEns_M_ID_1', 'ChameleonEns_M_ID_2', 'ChameleonEns_M_ID_3', 'ChameleonEns_M_ID_4', 'ChameleonEns_M_ID_5', 
+               'ChameleonEns_M_OOD_1', 'ChameleonEns_M_OOD_2', 'ChameleonEns_M_OOD_3', 'ChameleonEns_M_OOD_4', 'ChameleonEns_M_OOD_5', 
                 # RankingTime + Multiple DetTime
-               'Chameleon_Opt_logit_M_1_ID', 'Chameleon_Opt_logit_M_2_ID', 'Chameleon_Opt_logit_M_3_ID', 'Chameleon_Opt_logit_M_4_ID', 'Chameleon_Opt_logit_M_5_ID', 
-            #    'Chameleon_Opt_logit_M_7_ID', 'Chameleon_Opt_logit_M_9_ID', 'Chameleon_Opt_logit_M_11_ID',
-               'Chameleon_Opt_logit_M_1_OOD', 'Chameleon_Opt_logit_M_2_ODD', 'Chameleon_Opt_logit_M_3_ODD', 'Chameleon_Opt_logit_M_4_ODD', 'Chameleon_Opt_logit_M_5_ODD', 
-            #    'Chameleon_Opt_logit_M_7_ODD', 'Chameleon_Opt_logit_M_9_ODD', 'Chameleon_Opt_logit_M_11_ODD'
+               'ChameleonOpt_M_ID_1', 'ChameleonOpt_M_ID_2', 'ChameleonOpt_M_ID_3', 'ChameleonOpt_M_ID_4', 'ChameleonOpt_M_ID_5', 
+               'ChameleonOpt_M_OOD_1', 'ChameleonOpt_M_OOD_2', 'ChameleonOpt_M_OOD_3', 'ChameleonOpt_M_OOD_4', 'ChameleonOpt_M_OOD_5', 
             ]
+
 Method_list_name_mapping = [
     'Chameleon-Rec (ID)', 'Chameleon-Rec (OOD)',
+    'AvgEns',
     'Chameleon-Ens-1 (ID)', 'Chameleon-Ens-2 (ID)', 'Chameleon-Ens-3 (ID)', 'Chameleon-Ens-4 (ID)', 'Chameleon-Ens-5 (ID)', 
-    # 'Chameleon-Ens-7 (ID)', 'Chameleon-Ens-9 (ID)', 'Chameleon-Ens-11 (ID)',
     'Chameleon-Ens-1 (OOD)', 'Chameleon-Ens-2 (OOD)', 'Chameleon-Ens-3 (OOD)', 'Chameleon-Ens-4 (OOD)', 'Chameleon-Ens-5 (OOD)', 
-    # 'Chameleon-Ens-7 (OOD)', 'Chameleon-Ens-9 (OOD)', 'Chameleon-Ens-11 (OOD)',
     'Chameleon-1 (ID)', 'Chameleon-2 (ID)', 'Chameleon-3 (ID)', 'Chameleon-4 (ID)', 'Chameleon-5 (ID)', 
-    # 'Chameleon-7 (ID)', 'Chameleon-9 (ID)', 'Chameleon-11 (ID)',
     'Chameleon-1 (OOD)', 'Chameleon-2 (OOD)', 'Chameleon-3 (OOD)', 'Chameleon-4 (OOD)', 'Chameleon-5 (OOD)', 
-    # 'Chameleon-7 (OOD)', 'Chameleon-9 (OOD)', 'Chameleon-11 (OOD)'
 ]
+
 Method_list_name_dict = bidict(dict(zip(Method_list, Method_list_name_mapping)))
 print('Total number of automated solution: ', len(Method_list))
 
 def categorize_method(name: str) -> str:
-    if '_Rec_' in name:
+    if 'ChameleonRec' in name:
         return 'Rec'                 # SelectionTime + 1 DetTime
-    elif '_Opt_logit_' in name:
+    elif 'ChameleonOpt' in name:
         return 'Opt_logit'           # RankingTime + Multiple DetTime
-    elif '_Opt_' in name:
+    elif 'ChameleonEns' in name:
         return 'Opt'                 # SelectionTime + Multiple DetTime
     else:
-        raise ValueError(f'Unknown method type: {name}')
+        return 'Other'               # AvgEns
 
 from collections import defaultdict
 
@@ -108,30 +104,29 @@ for filename in file_list:
             method_name = method
 
         elif method in groups['Opt']:
-            num_models = method.split('_')[-2]
+            num_models = method.split('_')[-1]
             if 'ID' in method:
                 T = SelectionTime_ID
-                method_name = 'Chameleon_Opt_ID/'+method[:-3]
                 s = df_RankingTime_ID[df_RankingTime_ID['file'] == filename]['RankingOpt'].to_list()[0]
                 selected_models = ast.literal_eval(s)[:int(num_models)]
             else:
                 T = SelectionTime_OOD
-                method_name = 'Chameleon_Opt_OOD/'+method[:-4]
                 s = df_RankingTime_OOD[df_RankingTime_OOD['file'] == filename]['RankingOpt'].to_list()[0]
                 selected_models = ast.literal_eval(s)[:int(num_models)]            
             
         elif method in groups['Opt_logit']:
-            num_models = method.split('_')[-2]
+            num_models = method.split('_')[-1]
             if 'ID' in method:
                 T = RankingTime_ID
-                method_name = 'Chameleon_Opt_ID/'+method[:-3]
                 s = df_RankingTime_ID[df_RankingTime_ID['file'] == filename]['RankingOpt'].to_list()[0]
                 selected_models = ast.literal_eval(s)[:int(num_models)]
             else:
                 T = RankingTime_OOD
-                method_name = 'Chameleon_Opt_OOD/'+method[:-4]
                 s = df_RankingTime_OOD[df_RankingTime_OOD['file'] == filename]['RankingOpt'].to_list()[0]
                 selected_models = ast.literal_eval(s)[:int(num_models)]  
+        else:
+            T = 0
+            selected_models = Candidate_Model_Set
 
         # Candidate T
         Candidate_T = 0
@@ -144,11 +139,11 @@ for filename in file_list:
                 print('No Candidate Model Time File: ', Candidate_Model)
                 Candidate_T = 0
 
-        df_acc = pd.read_csv(Automated_solution_path+method_name+'.csv')
+        df_acc = pd.read_csv(Automated_solution_path+method+'.csv')
         data_write.append(df_acc.loc[df_acc['file'] == filename, 'VUS-PR'].values[0])
 
-        # Metric = T + Candidate_T
-        Metric = T
+        Metric = T + Candidate_T
+        # Metric = T
         data_write.append(Metric)
             
         data_write_list.append(data_write)
