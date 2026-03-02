@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 <h3 id="usage"> 🧑‍💻 Usage </h3>
 
-**Stage 1: Chameleon Recommender** 
+**Meta-training** If you would like to train your Chameleon-Rec using customized dataset:
 
 ```bash
 cd chameleon/MolRec
@@ -46,7 +46,20 @@ python train_U.py --domain [domain id] --save_dir [weight saving direc] or
 python train_M.py --domain [domain id] --save_dir [weight saving direc]
 ```
 
-**Stage 2: Chameleon Optimizer**
+We provide our pretrained Chameleon-Rec weights at `testbed/ChameleonRec_weights`.
+
+
+**Stage 1: Chameleon Recommender** provides the estimated candidate model ranking for the given dataset.
+
+```bash
+cd benchmark_exp
+python run_AutoAD_U.py --AutoAD_Name ChameleonRec or
+python run_AutoAD_U.py --AutoAD_Name ChameleonRec
+```
+
+**Stage 2: Chameleon Optimizer** refines the initial ranking and performs weighted ensembling to further improve robustness.
+
+We use the following scripts for benchmarking practice:
 
 ```bash
 cd benchmark_exp
@@ -58,7 +71,6 @@ python run_AutoAD_M_ranking.py --AutoAD_Name ChameleonOpt_precomputed --variant 
 python run_AutoAD_M.py --AutoAD_Name ChameleonOpt_M_ID --variant [num of ens components] --save True --save_dir [eval result saving direc]
 python run_AutoAD_M.py --AutoAD_Name ChameleonOpt_M_OOD --variant [num of ens components] --save True --save_dir [eval result saving direc]
 ```
-
 
 
 <h2 id="reproducibility"> ⚙️ Reproducibility </h2>
