@@ -10,7 +10,7 @@ import ast
 import sys
 sys.path.append("/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon")
 
-from chameleon.NorAR.AnomalyResid import AnomalyResidualDecomposer, split_like_original
+from chameleon.NorAR.AnomalyResid import AnomalyResidualDecomposer
 from chameleon.MolRec.utils import *
 from chameleon.ModelOpt.AnomalyInjection import ANOMALY_PARAM_GRID, InjectAnomalies, gen_synthetic_performance_list
 from chameleon.ModelOpt.utils import *
@@ -99,8 +99,6 @@ def run_ChameleonOpt_precomputed(variant, data, Candidate_Model_Set, args):
             anomaly_type_pool = types_available
         else:
             anomaly_type_pool = list(rng.choice(np.array(types_available, dtype=object), size=max_types, replace=False))
-
-        # anomaly_type_pool = ['speedup']
 
         anomaly_obj = InjectAnomalies(
             random_state=int(rng.integers(0, 10_000)),
@@ -235,10 +233,6 @@ def run_ChameleonEns_U_ID(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    # scaler = StandardScaler()
-    # scaler.fit(det_scores)
-    # standardized_det_scores = scaler.transform(det_scores)
-    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
     avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
@@ -262,10 +256,6 @@ def run_ChameleonEns_U_OOD(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    # scaler = StandardScaler()
-    # scaler.fit(det_scores)
-    # standardized_det_scores = scaler.transform(det_scores)
-    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
     avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
@@ -289,10 +279,6 @@ def run_ChameleonEns_M_ID(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    # scaler = StandardScaler()
-    # scaler.fit(det_scores)
-    # standardized_det_scores = scaler.transform(det_scores)
-    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
     avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 
@@ -316,10 +302,6 @@ def run_ChameleonEns_M_OOD(variant, data, Candidate_Model_Set, args):
 
     if len(scores_list) == 1:
         return det_scores.ravel(), True
-    # scaler = StandardScaler()
-    # scaler.fit(det_scores)
-    # standardized_det_scores = scaler.transform(det_scores)
-    # avg_ens_scores = np.mean(standardized_det_scores, axis=1)
     avg_ens_scores = np.mean(det_scores, axis=1)
     return avg_ens_scores, True
 

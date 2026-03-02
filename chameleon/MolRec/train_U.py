@@ -253,9 +253,9 @@ if __name__ == "__main__":
     parser.add_argument('--save_dir', type=str,
                         default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/weights/TSB-AD-U/ChameleonRec/')
     parser.add_argument('--precomputed_dir', type=str,
-                        default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/precomputed_resid_stl_window_ad/')
+                        default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/precomputed_resid_processing_flow_stl_ad/')
 
-    parser.add_argument('--d_model', type=int, default=256)
+    parser.add_argument('--d_model', type=int, default=512)
     parser.add_argument('--dropout', type=float, default=0.1)
     parser.add_argument('--patience', type=int, default=5)
 

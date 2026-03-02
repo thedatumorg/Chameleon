@@ -254,7 +254,7 @@ if __name__ == "__main__":
                         default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/precomputed_resid_processing_flow_stl_ad_M/')
 
 
-    parser.add_argument('--d_model', type=int, default=256)
+    parser.add_argument('--d_model', type=int, default=64)
     parser.add_argument('--dropout', type=float, default=0.1)
     parser.add_argument('--patience', type=int, default=5)
 

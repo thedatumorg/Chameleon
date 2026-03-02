@@ -89,7 +89,7 @@ if __name__ == '__main__':
     parser.add_argument('--eval_path', type=str, default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/Candidate/TSB-AD-M/')
     parser.add_argument('--eval_list', type=str, default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/file_list/TSB-AD-M-Label.csv')
 
-    parser.add_argument('--AutoAD_Name', type=str, default='SATzilla')
+    parser.add_argument('--AutoAD_Name', type=str, default='ChameleonOpt')
     parser.add_argument('--variant', type=str, default='ID')
     
     parser.add_argument('--save', type=bool, default=False)

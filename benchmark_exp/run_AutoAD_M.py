@@ -91,7 +91,7 @@ if __name__ == '__main__':
     parser.add_argument('--eval_path', type=str, default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/eval/Candidate/TSB-AD-M/')
     parser.add_argument('--eval_list', type=str, default='/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/file_list/TSB-AD-M-Label.csv')
 
-    parser.add_argument('--AutoAD_Name', type=str, default='SATzilla')
+    parser.add_argument('--AutoAD_Name', type=str, default='ChameleonOpt')
     parser.add_argument('--variant', type=str, default='ID')
     
     parser.add_argument('--save', type=bool, default=False)
@@ -163,6 +163,11 @@ if __name__ == '__main__':
                     pad_length = len(label) - len(output)
                     output = np.pad(output, (0, pad_length), 'constant', constant_values=(0, output[-1]))
                 output = np.nan_to_num(output)
+
+                # score_root = '/data/liuqinghua/code/ts/TSAD-AutoML/Chameleon/testbed/score/TSB-AD-M'
+                # tgt_path = os.path.join(score_root, Automated_solution, f'{filename.split(".")[0]}.npy')
+                # os.makedirs(os.path.dirname(tgt_path), exist_ok=True)
+                # np.save(tgt_path, output)
 
                 evaluation_result = get_metrics(output, label, slidingWindow=100)
                 print('evaluation_result: ', evaluation_result)
